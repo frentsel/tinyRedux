@@ -40,3 +40,6 @@ store.subscribe(function (data) {
 });
 
 store.dispatch('ADD', 6);
+store.dispatch('DELETE', 1);
+store.dispatch('DELETE', 2);
+store.dispatch('DELETE', 3);
