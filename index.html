@@ -2,12 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Indie Flower', arial;
+        }
+        body {
+            margin: 0 auto;
+            width: 500px;
+            font-family: 'Indie Flower', arial;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        span {
+            float: right;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="./index.js" defer></script>
 </head>
 <body>
-<script src="./index.js"></script>
+<b>Simplified implementation of Redux</b>
+<hr>
+<div id="list">
+</div>
+<hr>
+<input type="text" id="add">
+<button onclick="manager.add()" type="button" class="btn btn-primary">Add</button>
+<script type="text/html" id="tpl">
+    <div>{el}
+        <span>
+            <button class="btn btn-warning" onclick="manager.delete('{el}')">&times;</button>
+            <button class="btn btn-primary" onclick="manager.update('{el}')">✍</button>
+        </span>
+    </div>
+</script>
 </body>
 </html>
