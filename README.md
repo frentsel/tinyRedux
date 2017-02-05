@@ -1,12 +1,12 @@
 # tinyRedux
-The tinyRedux library is an simplified version of Redux which provides the same capabilities.
 ![preview](./demo.jpg)
+The tinyRedux library is an simplified version of Redux which provides the same capabilities.
 
 ## Demo
 https://frentsel.github.io/tinyRedux/index.html
 
 ## Download
-**CDN:** https://frentsel.github.io/tinyRedux/tinyRedux.js
+**CDN:** https://cdn.rawgit.com/frentsel/tinyRedux/master/tinyRedux.js
 
 ## Basic Usage
 
@@ -19,7 +19,7 @@ var data = [
 ];
 ```
 
-Pass a data and handlers in Store constructor fro create instance of store.
+Pass created data and object of handlers into Store constructor fro create instance of store.
 ```javascript
 var store = new Store(data, {
     GET_ALL: function (state) {
