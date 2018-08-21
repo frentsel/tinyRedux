@@ -56,8 +56,3 @@ store.dispatch('ADD', 'Melon');
 store.dispatch('DELETE', 'Orange');
 store.dispatch('UPDATE', {from: 'Orange', to: 'Peach'});
 ```
-That's all :)
-
-## Dependencies
-
-none
