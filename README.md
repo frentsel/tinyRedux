@@ -1,5 +1,6 @@
 # tinyRedux
 ![preview](./demo.jpg)
+
 The tinyRedux library is an simplified version of Redux which provides the same capabilities.
 
 ## Demo
