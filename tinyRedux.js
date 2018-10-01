@@ -1,8 +1,5 @@
 var Store = function(initialState = [], _actions = {}) {
 
-  console.log('initialState: ', initialState);
-  console.log('_actions: ', _actions);
-
   const actions = {};
   const handlers = [];
   let state = initialState.slice(0);

@@ -14,9 +14,9 @@ https://frentsel.github.io/tinyRedux/index.html
 Create some data store for application
 ```javascript
 var data = [
-    'Apple',
-    'Banana',
-    'Orange'
+  'Apple',
+  'Banana',
+  'Orange'
 ];
 ```
 
