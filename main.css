@@ -1,63 +1,90 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url( 'https://fonts.googleapis.com/css?family=Indie+Flower');
 
 * {
-	font-family: 'Indie Flower', arial;
-	outline: none;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  font-family: 'Indie Flower', arial;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 body {
-	margin: 0 auto;
-	width: 500px;
-	font-family: 'Indie Flower', arial;
-	font-size: 20px;
-	font-weight: 700;
-	color: #345;
+  margin: 0 auto;
+  width: 500px;
+  font-family: 'Indie Flower', arial;
+  font-size: 20px;
+  font-weight: 700;
+  color: #345;
 }
+
 a {
-	float: right;
-	margin-right: 16px;
+  float: right;
+  margin-right: 16px;
 }
+
 b {
-	font-size: 24px;
-	color: #459400;
-	display: block;
-	height: 50px;
-	line-height: 50px;
+  font-size: 24px;
+  color: #459400;
+  display: block;
+  height: 50px;
+  line-height: 50px;
 }
-span {
-	float: right;
-}
+
 #list {
-	margin: 20px 0 40px;
-	border-bottom: 1px solid #dedede;
-	background: rgba(249, 249, 249, 0.62);
+  margin: 20px 0;
+  border-right: 1px dashed #dedede;
+  border-bottom: 1px dashed #dedede;
+  border-left: 1px dashed #dedede;
+  background: rgba(249, 249, 249, 0.62);
 }
+
+#list:empty {
+  display: none;
+}
+
 .item {
-	border-top: 1px solid #dedede;
-	margin: 6px 0;
-	padding: 6px 14px;
-	line-height: 22px;
-	font-size: 18px;
+  border-top: 1px dashed #dedede;
+  padding: 0 14px;
+  font-size: 18px;
+  display: flex;
+  height: 36px;
+  align-items: center;
 }
+
+.item span {
+  flex-grow: 1;
+}
+
+#input {
+  display: flex;
+  border: 1px dashed #dedede;
+  padding: 10px 15px;
+  background: #fbfbfb;
+  margin-top: 20px;
+}
+
+#add {
+  border: 1px solid #dedede;
+  padding: 0 5px;
+  font-size: 15px;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+button,
 input {
-	width: 414px;
-	border: 1px solid #dedede;
-	padding: 0 5px;
-	font-size: 15px;
-	font-weight: bold;
+  height: 26px;
+  float: left;
+  line-height: 26px;
 }
-input, button {
-	height: 26px;
-	float: left;
-	line-height: 26px;
-}
+
 button {
-	cursor: pointer;
-	padding: 0 7px;
-	margin-left: 8px;
+  cursor: pointer;
+  padding: 0 7px;
+  margin-left: 8px;
 }
+
 button.send {
-	width: 64px;
+  width: 54px;
+  font-size: 14px;
 }

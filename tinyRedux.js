@@ -1,20 +1,24 @@
-var Store = function(initialState, _handlers){
-	var handlers = {},
-		state = initialState,
-		handler,
-		key;
-	for(key in _handlers){
-		handlers[key] = _handlers[key].bind(this);
-	}
-	this.getState = function () {
-		return state;
-	};
-	this.subscribe = function (_handler) {
-		handler = _handler;
-	};
-	this.dispatch = function (type, item) {
-		state = handlers[type](state, item || {});
-		handler(state);
-	};
-	return this;
+var Store = function(initialState = [], _actions = {}) {
+
+  console.log('initialState: ', initialState);
+  console.log('_actions: ', _actions);
+
+  const actions = {};
+  const handlers = [];
+  let state = initialState.slice(0);
+
+  for (const key in _actions) {
+    actions[key] = _actions[key].bind(this);
+  }
+
+  this.getState = () => state.slice(0);
+
+  this.subscribe = (subsriber) => handlers.push(subsriber);
+
+  this.dispatch = (type, item) => {
+    state = actions[type](state, item || {});
+    handlers.forEach((subsriber) => subsriber(state.slice(0)));
+  };
+
+  return this;
 };

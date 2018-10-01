@@ -1,28 +1,30 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./main.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="./tinyRedux.js" defer></script>
-    <script src="./index.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="./tinyRedux.js" defer></script>
+  <script src="./index.js" defer></script>
 </head>
+
 <body>
-<b>Simplified implementation of Redux <a href="https://github.com/frentsel/tinyRedux">GitHub</a></b>
-<div id="list">
-</div>
-<input type="text" id="add">
-<button onclick="manager.add()" type="button" class="send">Add</button>
-<script type="text/html" id="tpl">
-    <div class="item">{el}
-        <span>
-            <button class="action" onclick="manager.delete('{el}')">&cross;</button>
-            <button class="action" onclick="manager.update('{el}')">&check;</button>
-        </span>
+  <b>Simplified implementation of Redux <a href="https://github.com/frentsel/tinyRedux">GitHub</a></b>
+  <div id="list"></div>
+  <div id="input">
+    <input type="text" id="add" autofocus>
+    <button onclick="manager.add()" type="button" class="send">Add</button>
+  </div>
+  <script type="text/html" id="tpl">
+    <div class="item">
+      <span>{el}</span>
+      <button class="action" onclick="manager.delete('{el}')">&cross;</button>
+      <button class="action" onclick="manager.update('{el}')">&check;</button>
     </div>
-</script>
+  </script>
 </body>
+
 </html>

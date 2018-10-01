@@ -23,31 +23,29 @@ var data = [
 Pass created data and object of handlers into Store constructor fro create instance of store.
 ```javascript
 var store = new Store(data, {
-    GET_ALL: function (state) {
-        return state;
-    },
-    ADD: function (state, item) {
-        state.push(item);
-        return state;
-    },
-    DELETE: function (state, item) {
-        var index = state.indexOf(item);
-        state.splice(index, 1);
-        return state;
-    },
-    UPDATE: function (state, obj) {
-        var index = state.indexOf(obj.from);
-        state[index] = obj.to;
-        return state;
-    }
+  GET_ALL: function (state) {
+    return state;
+  },
+  ADD: function (state, item) {
+    state.push(item);
+    return state;
+  },
+  DELETE: function (state, item) {
+    var index = state.indexOf(item);
+    state.splice(index, 1);
+    return state;
+  },
+  UPDATE: function (state, obj) {
+    var index = state.indexOf(obj.from);
+    state[index] = obj.to;
+    return state;
+  }
 });
 ```
 
 Subscribe on all changes of state.
 ```javascript
-store.subscribe(function(state){
-	console.log(state);
-});
+store.subscribe(console.log);
 ```
 
 And let's change a storage.
