@@ -3,8 +3,7 @@
 
 The tinyRedux library is an simplified version of Redux which provides the same capabilities.
 
-## Demo
-https://frentsel.github.io/tinyRedux/index.html
+## [Demo](https://frentsel.github.io/tinyRedux/index.html)
 
 ## Download
 **CDN:** https://cdn.rawgit.com/frentsel/tinyRedux/master/tinyRedux.js

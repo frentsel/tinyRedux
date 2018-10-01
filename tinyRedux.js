@@ -1,7 +1,7 @@
 var Store = function(initialState = [], _actions = {}) {
 
   const actions = {};
-  const handlers = [];
+  const subscribers = [];
   let state = initialState.slice(0);
 
   for (const key in _actions) {
@@ -10,11 +10,11 @@ var Store = function(initialState = [], _actions = {}) {
 
   this.getState = () => state.slice(0);
 
-  this.subscribe = (subsriber) => handlers.push(subsriber);
+  this.subscribe = (subsriber) => subscribers.push(subsriber);
 
   this.dispatch = (type, item) => {
     state = actions[type](state, item || {});
-    handlers.forEach((subsriber) => subsriber(state.slice(0)));
+    subscribers.forEach((subsriber) => subsriber(state.slice(0)));
   };
 
   return this;
