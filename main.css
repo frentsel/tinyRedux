@@ -1,90 +1,88 @@
-@import url( 'https://fonts.googleapis.com/css?family=Indie+Flower');
-
 * {
-  font-family: 'Indie Flower', arial;
-  outline: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	outline   : none;
+	box-sizing: border-box;
+	margin    : 0;
+	padding   : 0;
+    font-size: 18px;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
-  margin: 0 auto;
-  width: 500px;
-  font-family: 'Indie Flower', arial;
-  font-size: 20px;
-  font-weight: 700;
-  color: #345;
+    margin: 0 auto;
+    width: 500px;
+    font-family: arial;
+    color: #345;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-a {
-  float: right;
-  margin-right: 16px;
+#items {
+	display: grid;
+    grid-gap: 1px;
+    background: gray;
+    border: 1px solid gray;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-b {
-  font-size: 24px;
-  color: #459400;
-  display: block;
-  height: 50px;
-  line-height: 50px;
+#items>div {
+    padding: 5px;
+    color: crimson;
+    flex-grow: 1;
+    text-align: center;
+	background: white;
+	display: flex;
+    flex-direction: column-reverse;
 }
 
-#list {
-  margin: 20px 0;
-  border-right: 1px dashed #dedede;
-  border-bottom: 1px dashed #dedede;
-  border-left: 1px dashed #dedede;
-  background: rgba(249, 249, 249, 0.62);
+#items button {
+    font-size: 12px;
+    padding: 5px;
 }
 
-#list:empty {
-  display: none;
+span {
+	display: block;
 }
 
-.item {
-  border-top: 1px dashed #dedede;
-  padding: 0 14px;
-  font-size: 18px;
-  display: flex;
-  height: 36px;
-  align-items: center;
+#manage {
+	display   : flex;
+	margin-top: 20px;
 }
 
-.item span {
-  flex-grow: 1;
+#manage button {
+	display: block;
+	padding: 0 20px;
+}
+
+button:nth-child(2) {
+	display: block;
+}
+
+button:first-child {
+	display: none;
+}
+
+.active button:first-child {
+	display: block;
+}
+
+.active button:nth-child(2) {
+	display: none;
 }
 
 #input {
-  display: flex;
-  border: 1px dashed #dedede;
-  padding: 10px 15px;
-  background: #fbfbfb;
-  margin-top: 20px;
+	padding  : 10px;
+	max-width: 60px;
 }
 
-#add {
-  border: 1px solid #dedede;
-  padding: 0 5px;
-  font-size: 15px;
-  font-weight: bold;
-  flex-grow: 1;
-}
-
-button,
-input {
-  height: 26px;
-  float: left;
-  line-height: 26px;
-}
-
-button {
-  cursor: pointer;
-  padding: 0 7px;
-  margin-left: 8px;
-}
-
-button.send {
-  width: 54px;
-  font-size: 14px;
+footer {
+    color: #459400;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed gray;
+    margin-top: 15px;
+    padding-top: 15px;
 }

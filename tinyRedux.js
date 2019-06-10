@@ -1,21 +1,20 @@
-var Store = function(initialState = [], _actions = {}) {
+const Store = function(state = [], actions = {}) {
 
-  const actions = {};
-  const subscribers = [];
-  let state = initialState.slice(0);
+  let subscribers = [];
 
-  for (const key in _actions) {
-    actions[key] = _actions[key].bind(this);
-  }
+  this.getState = () => state;
 
-  this.getState = () => state.slice(0);
-
-  this.subscribe = (subsriber) => subscribers.push(subsriber);
-
-  this.dispatch = (type, item) => {
-    state = actions[type](state, item || {});
-    subscribers.forEach((subsriber) => subsriber(state.slice(0)));
+  this.subscribe = (subscriber) => {
+    subscribers.push(subscriber);
+    return {
+      unsubscribe: () => {
+        subscribers = subscribers.filter((_subscriber) => _subscriber.toString() !== subscriber.toString());
+      }
+    };
   };
 
-  return this;
+  this.dispatch = (action, payload = {}) => {
+    state = actions[action](state, payload);
+    subscribers.forEach((subsriber) => subsriber(state));
+  };
 };

@@ -3,28 +3,50 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="./main.css">
-  <script src="./tinyRedux.js" defer></script>
-  <script src="./index.js" defer></script>
 </head>
 
 <body>
-  <b>Simplified implementation of Redux <a href="https://github.com/frentsel/tinyRedux">GitHub</a></b>
-  <div id="list"></div>
-  <div id="input">
-    <input type="text" id="add" autofocus>
-    <button onclick="manager.add()" type="button" class="send">Add</button>
-  </div>
-  <script type="text/html" id="tpl">
-    <div class="item">
-      <span>{el}</span>
-      <button class="action" onclick="manager.delete('{el}')">&cross;</button>
-      <button class="action" onclick="manager.update('{el}')">&check;</button>
+  <div id="items">
+    <div>
+      <button onclick="subscribe('a', this)">Subscribe</button>
+      <button onclick="unsubscribe('a', this)">unSubscribe</button>
+      <span id="a"></span>
     </div>
-  </script>
+    <div>
+      <button onclick="subscribe('b', this)">Subscribe</button>
+      <button onclick="unsubscribe('b', this)">unSubscribe</button>
+      <span id="b"></span>
+    </div>
+    <div>
+      <button onclick="subscribe('c', this)">Subscribe</button>
+      <button onclick="unsubscribe('c', this)">unSubscribe</button>
+      <span id="c"></span>
+    </div>
+    <div>
+      <button onclick="subscribe('d', this)">Subscribe</button>
+      <button onclick="unsubscribe('d', this)">unSubscribe</button>
+      <span id="d"></span>
+    </div>
+  </div>
+
+  <div id="manage">
+    <button onclick="increment()">+1</button>
+    <button onclick="decrement()">-1</button>
+    <input oninput="change(this.value)" type="number" id="input">
+  </div>
+
+  <footer>
+    <span>Simplified implementation of Redux</span>
+    <a href="https://github.com/frentsel/tinyRedux">GitHub</a>
+  </footer>
+
+  <script src="./tinyRedux.js" defer></script>
+  <script src="./index.js" defer></script>
 </body>
 
 </html>
